@@ -123,9 +123,10 @@ receberá 1 ponto no placar.
             if (ask_request_to_live and max_round == 1):
                 # O total de partidas será zero
                 max_round = 0
+            # Caso contrário, diminui em 1 para não contabilizar a partida que decidiram sair
             else: max_round -= 1
 
-            first_player_victory = ((max_first_win / (max_round)) * 100) if max_round != 0 else 0
+            first_player_victory = ((max_first_win / (max_round)) * 100) if max_round != 0 else 0 # verificação para evitar divisão por 0
             second_player_victory = ((max_second_win / (max_round)) * 100) if max_round != 0 else 0
 
             print("\nUm dos jogadores encerrou o jogo.\n ")
