@@ -30,10 +30,11 @@ e as partidas serão com base na regra “melhor de 3”,
 ou seja, o jogador que obtiver duas vitórias primeiro 
 receberá 1 ponto no placar.
     """)
-    print("Digite [1] para apostar “Tesoura”.\nDigite [2] para apostar “Papel”.\nDigite [3] para apostar “Pedra”.\n")
+    print("Digite [1] para apostar “Pedra”.\nDigite [2] para apostar “Papel”.\nDigite [3] para apostar “Tesoura”.\n")
     print("Digite [0] para encerrar a partida.\n")
 
     is_playing = True
+    ask_request_to_live = False
 
     round = 1
     max_round = round
@@ -71,12 +72,12 @@ receberá 1 ponto no placar.
             second_player = int(input("Jogador 2, informe sua jogada: "))
 
         # Confere se o Jogador 1 venceu
-        if (first_player == 1 and second_player == 2 or first_player == 2 and second_player == 3 or first_player == 3 and second_player == 1):
+        if (first_player == 1 and second_player == 3 or first_player == 2 and second_player == 1 or first_player == 3 and second_player == 2):
             
             # Imprime na tela qual a situação que levou o Jogador 1 à vitória
-            if (first_player == 1 and second_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
-            elif (first_player == 2 and second_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
-            else: print("\nResultado: “Pedra” derrota “Tesoura”")
+            if (first_player == 1 and second_player == 3): print("\nResultado: “Pedra” derrota “Tesoura”")
+            elif (first_player == 2 and second_player == 1): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Tesoura” derrota “Papel”")
 
             print("\n-> O Jogador 1 venceu a " + str(round) + "º partida!\n")
             round += 1
@@ -92,10 +93,11 @@ receberá 1 ponto no placar.
                 print("Jogador 1:", first_player_points, "pontos.")
                 print("Jogador 2:", second_player_points, "pontos.\n")
 
-        elif (second_player == 1 and first_player == 2 or second_player == 2 and first_player == 3 or second_player == 3 and first_player == 1):
-            if (second_player == 1 and first_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
-            elif (second_player == 2 and first_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
-            else: print("\nResultado: “Pedra” derrota “Tesoura”")
+        elif (second_player == 1 and first_player == 3 or second_player == 2 and first_player == 1 or second_player == 3 and first_player == 2):
+            
+            if (second_player == 1 and first_player == 3): print("\nResultado: “Pedra” derrota “Tesoura”")
+            elif (second_player == 2 and first_player == 1): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Tesoura” derrota “Papel”")
 
             print("\n-> O Jogador 2 venceu a " + str(round) + "º partida!\n")
             round += 1
@@ -115,8 +117,12 @@ receberá 1 ponto no placar.
 
         elif (first_player == 0 or second_player == 0):
             is_playing = False
+            ask_request_to_live = True
 
-            if(max_round == 1): max_round = 0
+            # Se algum jogador pedir para sair na primeira partida (não jogarem)
+            if (ask_request_to_live and max_round == 1):
+                # O total de partidas será zero
+                max_round = 0
             else: max_round -= 1
 
             first_player_victory = ((max_first_win / (max_round)) * 100) if max_round != 0 else 0
@@ -159,7 +165,7 @@ elif (user_choice == 2):
 Nesse modo de jogo o Jogador 1 é humano e o Jogador 2 é a inteligência artificial. 
 A cada vitória obtida, o jogador receberá 1 ponto no placar.
     """)
-    print("Digite [1] para apostar “Tesoura”.\nDigite [2] para apostar “Papel”.\nDigite [3] para apostar “Pedra”.\n")
+    print("Digite [1] para apostar “Pedra”.\nDigite [2] para apostar “Papel”.\nDigite [3] para apostar “Tesoura”.\n")
     print("Digite [0] para encerrar a partida.\n")
 
     is_playing = True
@@ -185,21 +191,22 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
         print("Jogador 2 escolheu:", second_player)
         
          # Confere se o Jogador 1 venceu
-        if (first_player == 1 and second_player == 2 or first_player == 2 and second_player == 3 or first_player == 3 and second_player == 1):
+        if (first_player == 1 and second_player == 3 or first_player == 2 and second_player == 1 or first_player == 3 and second_player == 2):
             
             # Imprime na tela qual a situação que levou o Jogador 1 à vitória
-            if (first_player == 1 and second_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
-            elif (first_player == 2 and second_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
-            else: print("\nResultado: “Pedra” derrota “Tesoura”")
+            if (first_player == 1 and second_player == 3): print("\nResultado: “Pedra” derrota “Tesoura”")
+            elif (first_player == 2 and second_player == 1): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Tesoura” derrota “Papel”")
 
             print("\n-> O Jogador 1 venceu a " + str(round) + "º partida!\n")
             round += 1
             first_player_points += 1
 
-        elif (second_player == 1 and first_player == 2 or second_player == 2 and first_player == 3 or second_player == 3 and first_player == 1):
-            if (second_player == 1 and first_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
-            elif (second_player == 2 and first_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
-            else: print("\nResultado: “Pedra” derrota “Tesoura”")
+        elif (second_player == 1 and first_player == 3 or second_player == 2 and first_player == 1 or second_player == 3 and first_player == 2):
+            
+            if (second_player == 1 and first_player == 3): print("\nResultado: “Pedra” derrota “Tesoura”")
+            elif (second_player == 2 and first_player == 1): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Tesoura” derrota “Papel”")
 
             print("\n-> O Jogador 2 venceu a " + str(round) + "º partida!\n")
             round += 1
@@ -270,21 +277,21 @@ A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
         second_player = randint(1, 3)
         print("Jogador 2 escolheu:", second_player)
 
-     # Confere se o Jogador 1 venceu
-        if (first_player == 1 and second_player == 2 or first_player == 2 and second_player == 3 or first_player == 3 and second_player == 1):
+        if (first_player == 1 and second_player == 3 or first_player == 2 and second_player == 1 or first_player == 3 and second_player == 2):
             
             # Imprime na tela qual a situação que levou o Jogador 1 à vitória
-            if (first_player == 1 and second_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
-            elif (first_player == 2 and second_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
-            else: print("\nResultado: “Pedra” derrota “Tesoura”")
+            if (first_player == 1 and second_player == 3): print("\nResultado: “Pedra” derrota “Tesoura”")
+            elif (first_player == 2 and second_player == 1): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Tesoura” derrota “Papel”")
 
             print("\n-> O Jogador 1 venceu a " + str(count_round) + "º partida!\n")
             first_player_points += 1
 
-        elif (second_player == 1 and first_player == 2 or second_player == 2 and first_player == 3 or second_player == 3 and first_player == 1):
-            if (second_player == 1 and first_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
-            elif (second_player == 2 and first_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
-            else: print("\nResultado: “Pedra” derrota “Tesoura”")
+        elif (second_player == 1 and first_player == 3 or second_player == 2 and first_player == 1 or second_player == 3 and first_player == 2):
+            
+            if (second_player == 1 and first_player == 3): print("\nResultado: “Pedra” derrota “Tesoura”")
+            elif (second_player == 2 and first_player == 1): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Tesoura” derrota “Papel”")
 
             print("\n-> O Jogador 2 venceu a " + str(count_round) + "º partida!\n")
             second_player_points += 1
