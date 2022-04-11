@@ -253,7 +253,7 @@ A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
     
     number_of_rounds = int(input("Digite quantas partidas deseja presenciar: "))
 
-    for count_round in range(0, number_of_rounds):
+    for count_round in range(1, number_of_rounds + 1):
 
         print("\nPartida", count_round)
         print("-------------------------------------\n")
@@ -287,4 +287,24 @@ A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
             tie_occurs += 1
             first_player_points = first_player_points
             second_player_points = second_player_points
+    
+    if (count_round == number_of_rounds):
+            first_player_victory = ((first_player_points / (number_of_rounds)) * 100) if number_of_rounds != 0 else 0
+            second_player_victory = ((second_player_points / (number_of_rounds)) * 100) if number_of_rounds != 0 else 0
+
+            print("\n----> Estatísticas do Jogo <----")
+            print("\nPlacar final")
+            print("\nJogador 1:", first_player_points, "pontos.")
+            print("Jogador 2:", second_player_points, "pontos.\n")
+
+            if (first_player_points > second_player_points): print("O Jogador 1 venceu o jogo!")
+            elif (second_player_points > first_player_points): print("O Jogador 2 venceu o jogo!")
+            else: print("O jogo terminou em empate")
+
+            print("\nTotal de partidas realizadas: ", (number_of_rounds))
+            print("Número de empates: ", tie_occurs)
+
+            print("\nPorcentagem de vitória em relação as partidas")
+            print("\nJogador 1: " + str(format(first_player_victory, ".2f")) + "% de vitória.")
+            print("Jogador 2: " + str(format(second_player_victory, ".2f")) + "% de vitória.")
     
