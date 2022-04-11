@@ -9,7 +9,7 @@ print("Humano vs Humano [1]\n")
 print("Humano vs Computador [2]\n")
 print("Computador vs Computador [3]\n")
 
-# Recebe a escolha do modo de jogo do usuário
+# Recebe a escolha do modo de jogo pelo usuário
 user_choice = int(input("Digite o modo de jogo desejado: "))
 
 # Se o dado fornecido pelo usuário não satisfaz a condição, ele deve digitar novamente
@@ -320,6 +320,6 @@ A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
             print("Número de empates: ", tie_occurs)
 
             print("\nPorcentagem de vitória em relação as partidas")
-            print("\nJogador 1: " + str(format(first_player_victory, ".2f")) + "% de vitória.")
-            print("Jogador 2: " + str(format(second_player_victory, ".2f")) + "% de vitória.")
+            print("\nJogador 1: " + str(first_player_victory) + "% de vitória.")
+            print("Jogador 2: " + str(second_player_victory) + "% de vitória.")
     
