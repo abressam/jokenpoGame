@@ -116,6 +116,9 @@ receberá 1 ponto no placar.
         elif (first_player == 0 or second_player == 0):
             is_playing = False
 
+            if(max_round == 1): max_round = 0
+            else: max_round -= 1
+
             first_player_victory = ((max_first_win / (max_round)) * 100) if max_round != 0 else 0
             second_player_victory = ((max_second_win / (max_round)) * 100) if max_round != 0 else 0
 
@@ -253,6 +256,10 @@ A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
     
     number_of_rounds = int(input("Digite quantas partidas deseja presenciar: "))
 
+    while number_of_rounds < 1:
+        print("\nOops! Você precisa digitar um número maior do que 0. Tente novamente.")
+        number_of_rounds = int(input("Digite quantas partidas deseja presenciar: "))
+
     for count_round in range(1, number_of_rounds + 1):
 
         print("\nPartida", count_round)
@@ -288,7 +295,7 @@ A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
             first_player_points = first_player_points
             second_player_points = second_player_points
     
-    if (count_round == number_of_rounds):
+        if (count_round == number_of_rounds):
             first_player_victory = ((first_player_points / (number_of_rounds)) * 100) if number_of_rounds != 0 else 0
             second_player_victory = ((second_player_points / (number_of_rounds)) * 100) if number_of_rounds != 0 else 0
 
