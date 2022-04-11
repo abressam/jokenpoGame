@@ -34,7 +34,7 @@ receberá 1 ponto no placar.
     print("Digite [0] para encerrar a partida.\n")
 
     is_playing = True
-    ask_request_to_live = False
+    request_to_leave = False
 
     round = 1
     max_round = round
@@ -117,10 +117,10 @@ receberá 1 ponto no placar.
 
         elif (first_player == 0 or second_player == 0):
             is_playing = False
-            ask_request_to_live = True
+            request_to_leave = True
 
             # Se algum jogador pedir para sair na primeira partida (não jogarem)
-            if (ask_request_to_live and max_round == 1):
+            if (request_to_leave and max_round == 1):
                 # O total de partidas será zero
                 max_round = 0
             # Caso contrário, diminui em 1 para não contabilizar a partida que decidiram sair
