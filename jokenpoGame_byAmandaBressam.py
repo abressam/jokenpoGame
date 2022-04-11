@@ -161,12 +161,15 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
 
     is_playing = True
     round = 1
+    tie_occurs = 0
+    first_player_points = 0
+    second_player_points = 0
 
     while is_playing:
 
         print("Partida", round)
         print("-------------------------------------\n")
-        
+
         # Recebe e guarda a opção de jogada inserido Jogador 1
         first_player = int(input("Jogador 1, infome sua jogada: "))
 
@@ -174,9 +177,64 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
         while first_player < 0 or first_player > 3:
             print("\nO Jogador 1 informou um número inválido. Por favor digite sua jogada novamente.")
             first_player = int(input("Jogador 1, infome sua jogada: "))
+            
+        second_player = randint(1, 3)
+        print("Jogador 2 escolheu:", second_player)
+        
+         # Confere se o Jogador 1 venceu
+        if (first_player == 1 and second_player == 2 or first_player == 2 and second_player == 3 or first_player == 3 and second_player == 1):
+            
+            # Imprime na tela qual a situação que levou o Jogador 1 à vitória
+            if (first_player == 1 and second_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
+            elif (first_player == 2 and second_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Pedra” derrota “Tesoura”")
 
+            print("\n-> O Jogador 1 venceu a " + str(round) + "º partida!\n")
+            round += 1
+            first_player_points += 1
 
+        elif (second_player == 1 and first_player == 2 or second_player == 2 and first_player == 3 or second_player == 3 and first_player == 1):
+            if (second_player == 1 and first_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
+            elif (second_player == 2 and first_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Pedra” derrota “Tesoura”")
 
+            print("\n-> O Jogador 2 venceu a " + str(round) + "º partida!\n")
+            round += 1
+            second_player_points += 1
+        
+        elif (first_player == 0):
+            is_playing = False
+
+            first_player_victory = ((first_player_points / (round)) * 100) if round != 0 else 0
+            second_player_victory = ((second_player_points / (round)) * 100) if round != 0 else 0
+
+            print("\nO Jogador 1 encerrou o jogo.\n ")
+
+            print("----> Estatísticas do Jogo <----")
+            print("\nPlacar final")
+            print("\nJogador 1:", first_player_points, "pontos.")
+            print("Jogador 2:", second_player_points, "pontos.\n")
+
+            if (first_player_points > second_player_points): print("O Jogador 1 venceu o jogo!")
+            elif (second_player_points > first_player_points): print("O Jogador 2 venceu o jogo!")
+            else: print("O jogo terminou em empate")
+
+            if(round == 1): round = 0
+            else: round -= 1
+
+            print("\nTotal de partidas realizadas: ", (round))
+            print("Número de empates: ", tie_occurs)
+
+            print("\nPorcentagem de vitória em relação as partidas")
+            print("\nJogador 1: " + str(format(first_player_victory, ".2f")) + "% de vitória.")
+            print("Jogador 2: " + str(format(second_player_victory, ".2f")) + "% de vitória.")
+
+        else: # Em caso de empate
+            print("\nEmpate! Joguem novamente.\n")
+            round += 1
+            tie_occurs += 1
+            first_player_points = first_player_points
+            second_player_points = second_player_points
 
 # O usuário selecionou o terceiro modo de jogo
 elif (user_choice == 3):
