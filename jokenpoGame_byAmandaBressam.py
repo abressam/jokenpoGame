@@ -239,5 +239,52 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
 # O usuário selecionou o terceiro modo de jogo
 elif (user_choice == 3):
     os.system('cls')
-    print("Modo de Jogo - Computador vs Computador")
+    # Instruções de como jogar o modo Humano vs Computador
+    print("Modo de Jogo - Computador vs Computador\n")
+    print("""-> Instruções
 
+Esse modo de jogo é uma batalha entre inteligências artificiais!
+O usuário será um espectador e definirá quantas partidas ocorreram durante o jogo.
+A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
+    """)
+    tie_occurs = 0
+    first_player_points = 0
+    second_player_points = 0
+    
+    number_of_rounds = int(input("Digite quantas partidas deseja presenciar: "))
+
+    for count_round in range(0, number_of_rounds):
+
+        print("\nPartida", count_round)
+        print("-------------------------------------\n")
+
+        first_player = randint(1, 3)
+        print("Jogador 1 escolheu:", first_player)
+        second_player = randint(1, 3)
+        print("Jogador 2 escolheu:", second_player)
+
+     # Confere se o Jogador 1 venceu
+        if (first_player == 1 and second_player == 2 or first_player == 2 and second_player == 3 or first_player == 3 and second_player == 1):
+            
+            # Imprime na tela qual a situação que levou o Jogador 1 à vitória
+            if (first_player == 1 and second_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
+            elif (first_player == 2 and second_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Pedra” derrota “Tesoura”")
+
+            print("\n-> O Jogador 1 venceu a " + str(count_round) + "º partida!\n")
+            first_player_points += 1
+
+        elif (second_player == 1 and first_player == 2 or second_player == 2 and first_player == 3 or second_player == 3 and first_player == 1):
+            if (second_player == 1 and first_player == 2): print("\nResultado: “Tesoura” derrota “Papel”")
+            elif (second_player == 2 and first_player == 3): print("\nResultado: “Papel” derrota “Pedra”")
+            else: print("\nResultado: “Pedra” derrota “Tesoura”")
+
+            print("\n-> O Jogador 2 venceu a " + str(count_round) + "º partida!\n")
+            second_player_points += 1
+
+        else: # Em caso de empate
+            print("\nEmpate! Joguem novamente.\n")
+            tie_occurs += 1
+            first_player_points = first_player_points
+            second_player_points = second_player_points
+    
