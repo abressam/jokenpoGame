@@ -1,6 +1,7 @@
 # Jokênpo Game
 
 import os
+from random import randint
 
 # Informações iniciais do menu
 print("Escolha o modo de jogo\nDigite o número correspondente ao modo\n")
@@ -153,11 +154,26 @@ elif (user_choice == 2):
     print("""-> Instruções
 
 Nesse modo de jogo o Jogador 1 é humano e o Jogador 2 é a inteligência artificial. 
-As rodadas serão com base na regra “melhor de 3”, ou seja, o jogador que obtiver 
-duas vitórias primeiro receberá 1 ponto no placar.
+A cada vitória obtida, o jogador receberá 1 ponto no placar.
     """)
     print("Digite [1] para apostar “Tesoura”.\nDigite [2] para apostar “Papel”.\nDigite [3] para apostar “Pedra”.\n")
     print("Digite [0] para encerrar a partida.\n")
+
+    is_playing = True
+    round = 1
+
+    while is_playing:
+
+        print("Partida", round)
+        print("-------------------------------------\n")
+        
+        # Recebe e guarda a opção de jogada inserido Jogador 1
+        first_player = int(input("Jogador 1, infome sua jogada: "))
+
+        # Confere se o valor inserido pelo Jogador 1 é valido, caso contrário joga novamente
+        while first_player < 0 or first_player > 3:
+            print("\nO Jogador 1 informou um número inválido. Por favor digite sua jogada novamente.")
+            first_player = int(input("Jogador 1, infome sua jogada: "))
 
 
 
