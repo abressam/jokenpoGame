@@ -31,35 +31,26 @@ ou seja, o jogador que obtiver duas vitórias primeiro
 receberá 1 ponto no placar.
     """)
     print("Digite [1] para apostar “Pedra”.\nDigite [2] para apostar “Papel”.\nDigite [3] para apostar “Tesoura”.\n")
-    print("Digite [0] para encerrar a partida.\n")
 
-    is_playing = True
-    request_to_leave = False
+    is_playing = 1
 
     round = 1
-    max_round = round
     tie_occurs = 0
 
     first_player_win = 0
     second_player_win = 0
 
-    max_first_win = first_player_win
-    max_second_win = second_player_win
-
-    first_player_points = 0
-    second_player_points = 0
-
-    while is_playing:
+    while is_playing == 1:
 
         # Imprime na tela a rodada atual
-        print("Partida", round)
+        print("\nPartida", round)
         print("-------------------------------------\n")
 
         # Recebe e guarda a opção de jogada inserido Jogador 1
         first_player = int(input("Jogador 1, infome sua jogada: "))
 
         # Confere se o valor inserido pelo Jogador 1 é valido, caso contrário joga novamente
-        while first_player < 0 or first_player > 3:
+        while first_player < 1 or first_player > 3:
             print("\nO Jogador 1 informou um número inválido. Por favor digite sua jogada novamente.")
             first_player = int(input("Jogador 1, infome sua jogada: "))
 
@@ -67,7 +58,7 @@ receberá 1 ponto no placar.
         second_player = int(input("Jogador 2, informe sua jogada: "))
             
         # Confere se o valor inserido pelo Jogador 2 é valido, caso contrário joga novamente
-        while second_player < 0 or second_player > 3:
+        while second_player < 1 or second_player > 3:
             print("\nO Jogador 2 informou um número inválido. Por favor digite sua jogada novamente.")
             second_player = int(input("Jogador 2, informe sua jogada: "))
 
@@ -79,19 +70,47 @@ receberá 1 ponto no placar.
             elif (first_player == 2 and second_player == 1): print("\nResultado: “Papel” derrota “Pedra”")
             else: print("\nResultado: “Tesoura” derrota “Papel”")
 
-            print("\n-> O Jogador 1 venceu a " + str(round) + "º partida!\n")
-            round += 1
-            max_round = round
+            print("\n-> O Jogador 1 venceu a ",round,"º partida!\n")
             first_player_win += 1
 
-            max_first_win = first_player_win
+            choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
-            if (first_player_win == 2):
-                first_player_points += 1
-                round = 1
-                print("Placar atual:\n")
-                print("Jogador 1:", first_player_points, "pontos.")
-                print("Jogador 2:", second_player_points, "pontos.\n")
+            while choice < 0 or choice > 1:
+                print("A opção inserida não é válida! Tente novamente")
+                choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
+
+            # O jogador escolhe continuar jogando e o loop não é interrompido
+            if (choice == 1):
+                round += 1
+                is_playing = is_playing
+
+            # O jogador não que continuar jogando então o loop é interrompido, as estatísticas do jogo são informadas e o programa encerra
+            else:
+                print("\nO jogo foi encerrado\n")
+                print("----> Estatísticas do Jogo <----")
+                print("\nPlacar final")
+                print("\nJogador 1:", first_player_win, "pontos.")
+                print("Jogador 2:", second_player_win, "pontos.\n")
+
+                if (first_player > second_player):
+                    print("O Jogador 1 venceu o jogo!")
+                elif (second_player > first_player):
+                    print("O Jogador 2 venceu o jogo!")
+                else:
+                    print("O jogo terminou em empate")
+
+                print("\nTotal de partidas realizadas: ", round)
+                print("Número de empates: ", tie_occurs)
+
+                first_player_victory_percent = (first_player_win / round) * 100
+                second_player_victory_percent = (second_player_win / round) * 100
+
+                print("\nPorcentagem de vitória em relação as partidas")
+                print("\nJogador 1:",first_player_victory_percent,"% de vitória.")
+                print("Jogador 2:",second_player_victory_percent,"% de vitória.")
+
+                break
+
 
         elif (second_player == 1 and first_player == 3 or second_player == 2 and first_player == 1 or second_player == 3 and first_player == 2):
             
@@ -101,32 +120,11 @@ receberá 1 ponto no placar.
 
             print("\n-> O Jogador 2 venceu a " + str(round) + "º partida!\n")
             round += 1
-            max_round = round
             second_player_win += 1
 
-            max_second_win = second_player_win
 
-            if (second_player_win == 2):
-                second_player_points += 1
-                round = 1
-                first_player_win = 0
-                second_player_win = 0
-                print("Placar atual:\n")
-                print("Jogador 1:", first_player_points, "pontos.")
-                print("Jogador 2:", second_player_points, "pontos.\n")
 
-        elif (first_player == 0 or second_player == 0):
-            is_playing = False
-            request_to_leave = True
-
-            # Se algum jogador pedir para sair na primeira partida (não jogarem)
-            if (request_to_leave and max_round == 1):
-                # O total de partidas será zero
-                max_round = 0
-            # Caso contrário, diminui em 1 para não contabilizar a partida que decidiram sair
-            else: max_round -= 1
-
-            first_player_victory = ((max_first_win / (max_round)) * 100) if max_round != 0 else 0 # verificação para evitar divisão por 0
+            """first_player_victory = ((max_first_win / (max_round)) * 100) if max_round != 0 else 0 # verificação para evitar divisão por 0
             second_player_victory = ((max_second_win / (max_round)) * 100) if max_round != 0 else 0
 
             print("\nUm dos jogadores encerrou o jogo.\n ")
@@ -145,12 +143,11 @@ receberá 1 ponto no placar.
 
             print("\nPorcentagem de vitória em relação as partidas")
             print("\nJogador 1: " + str(first_player_victory) + "% de vitória.")
-            print("Jogador 2: " + str(second_player_victory) + "% de vitória.")
+            print("Jogador 2: " + str(second_player_victory) + "% de vitória.")"""
 
         else: # Em caso de empate
             print("\nEmpate! Joguem novamente.\n")
             round += 1
-            max_round = round
             tie_occurs += 1
             first_player_win = first_player_win
             second_player_win = second_player_win
