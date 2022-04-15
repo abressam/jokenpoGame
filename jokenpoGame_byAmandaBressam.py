@@ -242,7 +242,7 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
         first_player = int(input("Jogador 1, infome sua jogada: "))
 
         # Confere se o valor inserido pelo Jogador 1 é valido, caso contrário joga novamente
-        while first_player < 0 or first_player > 3:
+        while first_player < 1 or first_player > 3:
             print("\nO Jogador 1 informou um número inválido. Por favor digite sua jogada novamente.")
             first_player = int(input("Jogador 1, infome sua jogada: "))
             
