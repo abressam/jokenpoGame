@@ -1,4 +1,4 @@
-# Jokênpo Game
+# Jokênpo Game - By Amanda Bressam Martins
 
 import os
 from random import randint
@@ -26,7 +26,7 @@ if (user_choice == 1):
     print("""-> Instruções
 
 Nesse modo de jogo é necessário dois jogadores humanos
-e toda vez que o jogador vencer uma partida, ele
+e toda vez que um jogador vencer uma partida, ele
 ganha 1 ponto no placar.
     """)
     print("Digite [1] para jogar “Pedra”.\nDigite [2] para jogar “Papel”.\nDigite [3] para jogar “Tesoura”.\n")
@@ -84,12 +84,12 @@ ganha 1 ponto no placar.
                 print("A opção inserida não é válida! Tente novamente")
                 choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
-            # O jogador escolhe continuar jogando e o loop não é interrompido
+            # O jogador escolhe continuar jogando
             if (choice == 1):
                 round += 1
                 is_playing = is_playing
 
-            # O jogador não que continuar jogando então o loop é interrompido, as estatísticas do jogo são informadas e o programa encerra
+            # O jogador escolhe encerrar o jogo, as estatísticas são informadas e o programa encerra
             else:
                 print("\nO jogo foi encerrado\n")
                 print("----> Estatísticas do Jogo <----")
@@ -116,7 +116,7 @@ ganha 1 ponto no placar.
 
                 break
 
-
+        # Confere se o Jogador 2 venceu
         elif (second_player == 1 and first_player == 3 or second_player == 2 and first_player == 1 or second_player == 3 and first_player == 2):
             
             if (second_player == 1 and first_player == 3): 
@@ -169,8 +169,9 @@ ganha 1 ponto no placar.
                 print("Jogador 2:",second_player_victory_percent,"% de vitória.")
 
                 break
-
-        else: # Em caso de empate
+        
+        # Confere se houve empate
+        else:
             print("\nEmpate!\n")
             tie_occurs += 1
             first_player_win = first_player_win
@@ -182,12 +183,10 @@ ganha 1 ponto no placar.
                 print("A opção inserida não é válida! Tente novamente")
                 choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
-            # O jogador escolhe continuar jogando e o loop não é interrompido
             if (choice == 1):
                 round += 1
                 is_playing = is_playing
 
-            # O jogador não que continuar jogando então o loop é interrompido, as estatísticas do jogo são informadas e o programa encerra
             else:
                 print("\nO jogo foi encerrado\n")
                 print("----> Estatísticas do Jogo <----")
@@ -245,11 +244,12 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
         while first_player < 1 or first_player > 3:
             print("\nO Jogador 1 informou um número inválido. Por favor digite sua jogada novamente.")
             first_player = int(input("Jogador 1, infome sua jogada: "))
-            
+
+        # O Jogador 2 terá a jogada definida aleatóriamente, no intervalo de 1 a 3 
         second_player = randint(1, 3)
         print("Jogador 2 escolheu:", second_player)
         
-         # Confere se o Jogador 1 venceu
+        # Confere se o Jogador 1 venceu
         if (first_player == 1 and second_player == 3 or first_player == 2 and second_player == 1 or first_player == 3 and second_player == 2):
             
             # Imprime na tela qual a situação que levou o Jogador 1 à vitória
@@ -272,12 +272,12 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
                 print("A opção inserida não é válida! Tente novamente")
                 choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
-            # O jogador escolhe continuar jogando e o loop não é interrompido
+            # O jogador escolhe continuar
             if (choice == 1):
                 round += 1
                 is_playing = is_playing
 
-            # O jogador não que continuar jogando então o loop é interrompido, as estatísticas do jogo são informadas e o programa encerra
+            # O jogador escolher encerrar o jogo, as estatísticas são informadas e o programa encerra
             else:
                 print("\nO jogo foi encerrado\n")
                 print("----> Estatísticas do Jogo <----")
@@ -304,6 +304,7 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
 
                 break
 
+        # Confere se o Jogador 2 venceu
         elif (second_player == 1 and first_player == 3 or second_player == 2 and first_player == 1 or second_player == 3 and first_player == 2):
             
             if (second_player == 1 and first_player == 3): 
@@ -325,12 +326,12 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
                 print("A opção inserida não é válida! Tente novamente")
                 choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
-            # O jogador escolhe continuar jogando e o loop não é interrompido
+            # O jogador escolhe continuar jogando
             if (choice == 1):
                 round += 1
                 is_playing = is_playing
 
-            # O jogador não quer continuar jogando então o loop é interrompido, as estatísticas do jogo são informadas e o programa encerra
+            # O jogador escolhe encerrar o jogo, as estatísticas são informadas e o programa encerra
             else:
                 print("\nO jogo foi encerrado\n")
                 print("----> Estatísticas do Jogo <----")
@@ -357,7 +358,8 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
 
                 break
 
-        else: # Em caso de empate
+        # Confere se houve empate
+        else:
             print("\nEmpate!\n")
             tie_occurs += 1
             first_player_win = first_player_win
@@ -369,12 +371,12 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
                 print("A opção inserida não é válida! Tente novamente")
                 choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
-            # O jogador escolhe continuar jogando e o loop não é interrompido
+            # O jogador escolhe continuar jogando
             if (choice == 1):
                 round += 1
                 is_playing = is_playing
 
-            # O jogador não quer continuar jogando então o loop é interrompido, as estatísticas do jogo são informadas e o programa encerra
+            # O jogador escolhe encerrar o jogo, as estatísticas são informadas e o programa encerra
             else:
                 print("\nO jogo foi encerrado\n")
                 print("----> Estatísticas do Jogo <----")
@@ -402,7 +404,7 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
                 break
 
 # O usuário selecionou o terceiro modo de jogo
-elif (user_choice == 3):
+else:
     os.system('cls')
     # Instruções de como jogar o modo Humano vs Computador
     print("Modo de Jogo - Computador vs Computador\n")
@@ -415,25 +417,32 @@ A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
     tie_occurs = 0
     first_player_win = 0
     second_player_win = 0
-    
+
+    # Recebe e guarda o número de partidas informadas pelo usuário    
     number_of_rounds = int(input("Digite quantas partidas deseja presenciar: "))
 
+    # Confere se o número inserido pelo usuário é maior que 0, caso contrário deve digitar novamente
     while number_of_rounds < 1:
         print("\nOops! Você precisa digitar um número maior do que 0. Tente novamente.")
         number_of_rounds = int(input("Digite quantas partidas deseja presenciar: "))
 
+    # O número de partidas é dado pelo intervalo de 1 até o número digitado pelo usuário
     for count_round in range(1, number_of_rounds + 1):
 
+        # Informa a partida atual
         print("\nPartida", count_round)
         print("-------------------------------------\n")
 
+        # A escolha de cada jogador é obtida aleatóriamente, no intervalo de 1 a 3
         first_player = randint(1, 3)
         print("Jogador 1 escolheu:", first_player)
+
         second_player = randint(1, 3)
         print("Jogador 2 escolheu:", second_player)
 
+        # Confere se o Jogador 1 venceu
         if (first_player == 1 and second_player == 3 or first_player == 2 and second_player == 1 or first_player == 3 and second_player == 2):
-            
+                
             # Imprime na tela qual a situação que levou o Jogador 1 à vitória
             if (first_player == 1 and second_player == 3):
                 print("\n O Jogador 1 jogou “Pedra” e o Jogador 2 jogou “Tesoura”")
@@ -447,9 +456,10 @@ A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
 
             print("\n-> O Jogador 1 venceu a ",count_round,"º partida!\n")
             first_player_win += 1
-
-        elif (second_player == 1 and first_player == 3 or second_player == 2 and first_player == 1 or second_player == 3 and first_player == 2):
             
+        # Confere se o Jogador 2 venceu
+        elif (second_player == 1 and first_player == 3 or second_player == 2 and first_player == 1 or second_player == 3 and first_player == 2):
+                
             if (second_player == 1 and first_player == 3): 
                 print("\nO Jogador 2 jogou “Pedra” e o Jogador 1 jogou “Tesoura”")
                 print("Resultado: “Pedra” derrota “Tesoura”")
@@ -463,29 +473,10 @@ A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
             print("\n-> O Jogador 2 venceu a ",count_round,"º partida!\n")
             second_player_win += 1
 
-        else: # Em caso de empate
+        # Confere se houve empate
+        else:
             print("\nEmpate!\n")
             tie_occurs += 1
             first_player_win = first_player_win
             second_player_win = second_player_win
-    
-        if (count_round == number_of_rounds):
-            first_player_victory = (first_player_win / number_of_rounds) * 100 
-            second_player_victory = (second_player_win / number_of_rounds) * 100 
-
-            print("\n----> Estatísticas do Jogo <----")
-            print("\nPlacar final")
-            print("\nJogador 1:", first_player_win, "pontos.")
-            print("Jogador 2:", second_player_win, "pontos.\n")
-
-            if (first_player_win > second_player_win): print("O Jogador 1 venceu o jogo!")
-            elif (second_player_win > first_player_win): print("O Jogador 2 venceu o jogo!")
-            else: print("O jogo terminou em empate")
-
-            print("\nTotal de partidas realizadas: ", (number_of_rounds))
-            print("Número de empates: ", tie_occurs)
-
-            print("\nPorcentagem de vitória em relação as partidas")
-            print("\nJogador 1: ",first_player_victory,"% de vitória.")
-            print("Jogador 2: ",second_player_victory,"% de vitória.")
     
