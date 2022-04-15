@@ -1,6 +1,6 @@
 # Jokênpo Game - By Amanda Bressam Martins
 
-import os
+# Importando a biblioteca random
 from random import randint
 
 # Informações iniciais do menu
@@ -19,10 +19,8 @@ while user_choice < 1 or user_choice > 3:
 
 # O usuário selecionou o primeiro modo de jogo
 if (user_choice == 1):
-    os.system('cls')
-
     # Instruções de como jogar o modo Humano vs Humano
-    print("Modo de Jogo - Humano vs Humano\n")
+    print("\n\nModo de Jogo - Humano vs Humano\n")
     print("""-> Instruções
 
 Nesse modo de jogo é necessário dois jogadores humanos
@@ -215,10 +213,8 @@ ganha 1 ponto no placar.
 
 # O usuário selecionou o segundo modo de jogo
 elif (user_choice == 2):
-    os.system('cls')
-
     # Instruções de como jogar o modo Humano vs Computador
-    print("Modo de Jogo - Humano vs Computador\n")
+    print("\n\nModo de Jogo - Humano vs Computador\n")
     print("""-> Instruções
 
 Nesse modo de jogo o Jogador 1 é humano e o Jogador 2 é uma inteligência artificial. 
@@ -405,9 +401,8 @@ A cada vitória obtida, o jogador receberá 1 ponto no placar.
 
 # O usuário selecionou o terceiro modo de jogo
 else:
-    os.system('cls')
     # Instruções de como jogar o modo Humano vs Computador
-    print("Modo de Jogo - Computador vs Computador\n")
+    print("\n\nModo de Jogo - Computador vs Computador\n")
     print("""-> Instruções
 
 Esse modo de jogo é uma batalha entre inteligências artificiais!
