@@ -505,6 +505,7 @@ else:
             first_player_win = first_player_win
             second_player_win = second_player_win
 
+        # Caso o contador se iguale ao número informado pelo usuário, as estatísticas do jogo seão informadas e o programa encerra
         if count_round == number_of_rounds:
             print("\nO jogo foi encerrado\n")
             print("----> Estatísticas do Jogo <----")
