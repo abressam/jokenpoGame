@@ -232,7 +232,7 @@ elif game_mode == 2:
     print("""-> Instruções
 
     Nesse modo de jogo o Jogador 1 é humano e o Jogador 2 é uma inteligência artificial. 
-    A cada vitória obtida, o jogador receberá 1 ponto no placar.
+    Toda vez que um jogador vencer uma partida, ele ganha 1 ponto no placar.
     """)
     print("Digite [1] para jogar “Pedra”.\nDigite [2] para jogar “Papel”.\nDigite [3] para jogar “Tesoura”.\n")
 
@@ -434,7 +434,7 @@ else:
 
     Esse modo de jogo é uma batalha entre inteligências artificiais!
     O usuário será um espectador e definirá quantas partidas ocorrerão durante o jogo.
-    A cada vitória obtida na partida, o jogador receberá 1 ponto no placar.
+    Toda vez que um jogador vencer uma partida, ele ganha 1 ponto no placar.
     """)
     tie_occurs = 0 # empates
     first_player_win = 0 # vitórias do Jogador 1
@@ -467,13 +467,13 @@ else:
                 
             # Imprime na tela qual a situação que levou o Jogador 1 à vitória
             if first_player == 1 and second_player == 3:
-                print("\n O Jogador 1 jogou “Pedra” e o Jogador 2 jogou “Tesoura”")
+                print("\nO Jogador 1 jogou “Pedra” e o Jogador 2 jogou “Tesoura”")
                 print("Resultado: “Pedra” derrota “Tesoura”")
             elif first_player == 2 and second_player == 1:
-                print("\n O Jogador 1 jogou “Papel” e o Jogador 2 jogou “Pedra”")
+                print("\nO Jogador 1 jogou “Papel” e o Jogador 2 jogou “Pedra”")
                 print("Resultado: “Papel” derrota “Pedra”")
             else:
-                print("\n O Jogador 1 jogou “Tesoura” e o Jogador 2 jogou “Papel”")
+                print("\nO Jogador 1 jogou “Tesoura” e o Jogador 2 jogou “Papel”")
                 print("\nResultado: “Tesoura” derrota “Papel”")
 
             print("\n-> O Jogador 1 venceu a ",count_round,"º partida!\n")
@@ -504,4 +504,28 @@ else:
             # Mantêm os valores correspondentes às vitórias de cada jogador
             first_player_win = first_player_win
             second_player_win = second_player_win
-    
+
+        if count_round == number_of_rounds:
+            print("\nO jogo foi encerrado\n")
+            print("----> Estatísticas do Jogo <----")
+            print("\nPlacar final")
+            print("\nJogador 1:", first_player_win, "pontos.")
+            print("Jogador 2:", second_player_win, "pontos.\n")
+
+            # Confere e informa qual jogador venceu o jogo ou se houve empate
+            if first_player_win > second_player_win:
+                print("O Jogador 1 venceu o jogo!")
+            elif second_player_win > first_player_win:
+                print("O Jogador 2 venceu o jogo!")
+            else:
+                print("O jogo terminou em empate")
+
+            print("\nTotal de partidas realizadas: ", number_of_rounds)
+            print("Número de empates: ", tie_occurs)
+
+            first_player_victory_percent = (first_player_win / number_of_rounds) * 100
+            second_player_victory_percent = (second_player_win / number_of_rounds) * 100
+
+            print("\nPorcentagem de vitória em relação as partidas")
+            print("\nJogador 1:", first_player_victory_percent, "% de vitória.")
+            print("Jogador 2:", second_player_victory_percent, "% de vitória.")
