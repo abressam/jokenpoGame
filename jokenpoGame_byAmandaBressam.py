@@ -73,7 +73,7 @@ if game_mode == 1:
                 print("\nO Jogador 1 jogou “Tesoura” e o Jogador 2 jogou “Papel”")
                 print("\nResultado: “Tesoura” derrota “Papel”")
 
-            print("\n-> O Jogador 1 venceu a ",round,"º partida!\n")
+            print("\n-> O Jogador 1 venceu a ", round, "º partida!\n")
             first_player_win += 1 # soma +1 às vitórias do Jogador 1 
 
             # Recebe e guarda a opção do usuário sobre continuar ou não o jogo
@@ -82,7 +82,7 @@ if game_mode == 1:
             # Confere se o valor inserido pelo usuário é válido (0 ou 1), caso contrário ele deve digitar novamente
             while continue_playing < 0 or continue_playing > 1:
                 print("A opção inserida não é válida! Tente novamente")
-                choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
+                continue_playing = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
             # O jogador escolhe continuar jogando
             if continue_playing == 1:
@@ -112,8 +112,8 @@ if game_mode == 1:
                 second_player_victory_percent = (second_player_win / round) * 100
 
                 print("\nPorcentagem de vitória em relação as partidas")
-                print("\nJogador 1:",first_player_victory_percent,"% de vitória.")
-                print("Jogador 2:",second_player_victory_percent,"% de vitória.")
+                print("\nJogador 1:", first_player_victory_percent, "% de vitória.")
+                print("Jogador 2:", second_player_victory_percent, "% de vitória.")
 
                 break
 
@@ -131,7 +131,7 @@ if game_mode == 1:
                 print("\nO Jogador 2 jogou “Tesoura” e o Jogador 1 jogou “Papel”")
                 print("\nResultado: “Tesoura” derrota “Papel”")
 
-            print("\n-> O Jogador 2 venceu a",round,"º partida!\n")
+            print("\n-> O Jogador 2 venceu a", round, "º partida!\n")
             second_player_win += 1 # soma +1 às vitórias do Jogador 2
 
             # Recebe e guarda a opção do usuário sobre continuar ou não o jogo
@@ -140,7 +140,7 @@ if game_mode == 1:
             # Confere se o valor inserido pelo usuário é válido (0 ou 1), caso contrário ele deve digitar novamente
             while continue_playing < 0 or continue_playing > 1:
                 print("A opção inserida não é válida! Tente novamente")
-                choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
+                continue_playing = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
             # O jogador escolhe continuar jogando
             if continue_playing == 1:
@@ -170,8 +170,8 @@ if game_mode == 1:
                 second_player_victory_percent = (second_player_win / round) * 100
 
                 print("\nPorcentagem de vitória em relação as partidas")
-                print("\nJogador 1:",first_player_victory_percent,"% de vitória.")
-                print("Jogador 2:",second_player_victory_percent,"% de vitória.")
+                print("\nJogador 1:", first_player_victory_percent, "% de vitória.")
+                print("Jogador 2:", second_player_victory_percent, "% de vitória.")
 
                 break
         
@@ -190,7 +190,7 @@ if game_mode == 1:
             # Confere se o valor inserido pelo usuário é válido (0 ou 1), caso contrário ele deve digitar novamente
             while continue_playing < 0 or continue_playing > 1:
                 print("A opção inserida não é válida! Tente novamente")
-                choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
+                continue_playing = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
             # O jogador escolhe continuar jogando
             if continue_playing == 1:
@@ -220,8 +220,8 @@ if game_mode == 1:
                 second_player_victory_percent = (second_player_win / round) * 100
 
                 print("\nPorcentagem de vitória em relação as partidas")
-                print("\nJogador 1:",first_player_victory_percent,"% de vitória.")
-                print("Jogador 2:",second_player_victory_percent,"% de vitória.")
+                print("\nJogador 1:", first_player_victory_percent, "% de vitória.")
+                print("Jogador 2:", second_player_victory_percent, "% de vitória.")
 
                 break
 
@@ -274,7 +274,7 @@ elif game_mode == 2:
                 print("\nO Jogador 1 jogou “Tesoura” e o Jogador 2 jogou “Papel”")
                 print("\nResultado: “Tesoura” derrota “Papel”")
 
-            print("\n-> O Jogador 1 venceu a ",round,"º partida!\n")
+            print("\n-> O Jogador 1 venceu a ", round, "º partida!\n")
             first_player_win += 1 # soma +1 às vitórias do Jogador 1
 
             # Recebe e guarda a opção do usuário sobre continuar ou não o jogo
@@ -283,7 +283,7 @@ elif game_mode == 2:
             # Confere se o valor inserido pelo usuário é válido (0 ou 1), caso contrário ele deve digitar novamente
             while continue_playing < 0 or continue_playing > 1:
                 print("A opção inserida não é válida! Tente novamente")
-                choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
+                continue_playing = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
             # O jogador escolhe continuar jogando
             if continue_playing == 1:
@@ -313,8 +313,8 @@ elif game_mode == 2:
                 second_player_victory_percent = (second_player_win / round) * 100
 
                 print("\nPorcentagem de vitória em relação as partidas")
-                print("\nJogador 1:",first_player_victory_percent,"% de vitória.")
-                print("Jogador 2:",second_player_victory_percent,"% de vitória.")
+                print("\nJogador 1:", first_player_victory_percent, "% de vitória.")
+                print("Jogador 2:", second_player_victory_percent, "% de vitória.")
 
                 break
 
@@ -332,7 +332,7 @@ elif game_mode == 2:
                 print("\nO Jogador 2 jogou “Tesoura” e o Jogador 1 jogou “Papel”")
                 print("\nResultado: “Tesoura” derrota “Papel”")
 
-            print("\n-> O Jogador 2 venceu a ",round,"º partida!\n")
+            print("\n-> O Jogador 2 venceu a ", round, "º partida!\n")
             second_player_win += 1 # soma +1 às vitórias do Jogador 2
 
             # Recebe e guarda a opção do usuário sobre continuar ou não o jogo
@@ -341,7 +341,7 @@ elif game_mode == 2:
             # Confere se o valor inserido pelo usuário é válido (0 ou 1), caso contrário ele deve digitar novamente
             while continue_playing < 0 or continue_playing > 1:
                 print("A opção inserida não é válida! Tente novamente")
-                choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
+                continue_playing = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
             # O jogador escolhe continuar jogando
             if continue_playing == 1:
@@ -371,8 +371,8 @@ elif game_mode == 2:
                 second_player_victory_percent = (second_player_win / round) * 100
 
                 print("\nPorcentagem de vitória em relação as partidas")
-                print("\nJogador 1:",first_player_victory_percent,"% de vitória.")
-                print("Jogador 2:",second_player_victory_percent,"% de vitória.")
+                print("\nJogador 1:", first_player_victory_percent, "% de vitória.")
+                print("Jogador 2:", second_player_victory_percent, "% de vitória.")
 
                 break
 
@@ -391,7 +391,7 @@ elif game_mode == 2:
             # Confere se o valor inserido pelo usuário é válido (0 ou 1), caso contrário ele deve digitar novamente
             while continue_playing < 0 or continue_playing > 1:
                 print("A opção inserida não é válida! Tente novamente")
-                choice = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
+                continue_playing = int(input("Deseja jogar novamente?\nDigite [0] para encerrar o jogo ou digite [1] para continuar jogando: "))
 
             # O jogador escolhe continuar jogando
             if continue_playing == 1:
@@ -421,8 +421,8 @@ elif game_mode == 2:
                 second_player_victory_percent = (second_player_win / round) * 100
 
                 print("\nPorcentagem de vitória em relação as partidas")
-                print("\nJogador 1:",first_player_victory_percent,"% de vitória.")
-                print("Jogador 2:",second_player_victory_percent,"% de vitória.")
+                print("\nJogador 1:", first_player_victory_percent, "% de vitória.")
+                print("Jogador 2:", second_player_victory_percent, "% de vitória.")
 
                 break
 
@@ -476,7 +476,7 @@ else:
                 print("\nO Jogador 1 jogou “Tesoura” e o Jogador 2 jogou “Papel”")
                 print("\nResultado: “Tesoura” derrota “Papel”")
 
-            print("\n-> O Jogador 1 venceu a ",count_round,"º partida!\n")
+            print("\n-> O Jogador 1 venceu a ", count_round, "º partida!\n")
             first_player_win += 1 # soma +1 às vitórias do Jogador 1
             
         # Confere se o Jogador 2 venceu
@@ -493,7 +493,7 @@ else:
                 print("\nO Jogador 2 jogou “Tesoura” e o Jogador 1 jogou “Papel”")
                 print("\nResultado: “Tesoura” derrota “Papel”")
 
-            print("\n-> O Jogador 2 venceu a ",count_round,"º partida!\n")
+            print("\n-> O Jogador 2 venceu a ", count_round, "º partida!\n")
             second_player_win += 1 # soma +1 às vitórias do Jogador 2
 
         # Confere se houve empate
